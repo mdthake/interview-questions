@@ -1,0 +1,38 @@
+You manage an Amazon outbound queue of n packages. The queue is given as
+an integer array arr, where arr[i] is the value of the package currently at position
+i (O-based). All values are positive.
+For each k from 1 to n, perform the following operation exactly once for that k:
+    1. Choose one package and move it to the end of the queue, without
+        changing the order of the other packages.
+    2. Compute the sum of the last k packages in the modified queue.
+    3. Restore the queue to its original order.
+For each operation, the objective is to maximise the sum of last k packages.
+Return a long integer array ans of length n, where ans[k-1] equals the maximum
+possible sum of the last k packages after choosing the move optimally.
+
+Example
+n = 4
+arr = [3, 1, 4, 2]
+
+Start with arr = [3, 1, 4, 1]. For each k, move one element to the right end
+(possibly the last), sum the last k, then restore.
+
+Optimal choices:
+    - k = 1: move 4 -> array becomes [3, 1, 2, 4]; last 1 sum = 4
+    - k = 2: move 4 -> [3, 1, 2, 4]; last 2 sum = 2 + 4 = 6. For e.g., moving 3 is
+      non-optimal because last 2 sum = 2 + 3 = 5 < 6
+    - k = 3: move 3 -> [1, 4, 2, 3]; last 3 sum = 4 + 2 + 3 = 9
+    - k = 4: moving anything doesn't change the total; sum = 3 + 1 + 4 + 2 = 10
+
+Function Description
+Complete the function getMaxSum in the editor below
+
+getMaxSum has the following parameter(s):
+    int arr[n]: the value of each package in the outbound queue
+
+Returns
+    long[n]: the maximum possible sum of the last k packages for each k from 1 to n
+
+Constraints
+    1 <= n <= 2 * 10^5
+    1 <= arr[i] <= 10^9
