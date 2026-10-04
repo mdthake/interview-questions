@@ -1,0 +1,15 @@
+You are given:
+    1. A list of teams.
+    2. A list of gear.
+    3. A list of gear that has already been issued to teams.
+
+Each team has an operation type. Each piece of gear specifies
+which operation types require that gear.
+
+Determine which team is the least equipped.
+
+A team is considered less equipped when it is missing more of
+the gear required for its operation type.
+
+If multiple teams are missing the same number of required gear
+items, return the team with the earliest deployment date.
