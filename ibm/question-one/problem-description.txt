@@ -1,0 +1,25 @@
+A palindrome is a string that reads the same forwards
+and backwards, such as 121 or tacocat. A substring is
+a continuous sequence of characters within a string.
+Given a string s, how many unique substrings of s are
+palindromes?
+
+Example
+s = "mokkori"
+
+Some of its substrings are [m, o, k, r, i, mo, ok, mok,
+okk, kk, okko]. There are 7 distinct palindromes [m, o, 
+k, r, i, kk, okko].
+
+Function Description
+Complete the function palindrome in the editor below.
+
+palindrome has the following paramter(s):
+    string s: a string
+
+Returns
+    int: the number of distinct palindromes
+
+Constraints
+    1 <= |s| <= 5000
+    Each character s[i] is in the range ascii[a-z]
